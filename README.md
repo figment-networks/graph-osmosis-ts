@@ -1,10 +1,10 @@
-# graph-cosmos-ts
+# graph-osmosis-ts
 
 This modules contains the TypeScript/AssemblyScript binding for osmosis protobuf
 
 ## Development
 
-Install protoc: `https://github.com/protocolbuffers/protobuf/releases`
+Install protoc: `https://github.com/protocolbuffers/protobuf/releases/tag/v3.20.1` (or more recent)
 
 ### Get proto-file
 
