@@ -3,11 +3,11 @@ import { cosmos } from "../../../cosmos";
 
 export class PoolAsset {
   static encode(message: PoolAsset, writer: Writer): void {
-    const token = message.token;
-    if (token !== null) {
+    const token_ = message.token;
+    if (token_ !== null) {
       writer.uint32(10);
       writer.fork();
-      cosmos.base.v1beta1.Coin.encode(token, writer);
+      cosmos.base.v1beta1.Coin.encode(token_, writer);
       writer.ldelim();
     }
 

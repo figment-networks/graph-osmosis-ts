@@ -9,6 +9,7 @@ ls -1 $(grep -slR 'message Msg' ./cosmos-sdk/proto | egrep '\.proto$') \
     ./cosmos-sdk/proto/cosmos/base/v1beta1/coin.proto \
     ./cosmos-sdk/proto/cosmos/gov/v1beta1/gov.proto \
     ./cosmos-sdk/proto/cosmos/staking/v1beta1/staking.proto \
+    ./cosmos-sdk/proto/cosmos/upgrade/v1beta1/upgrade.proto \
     ./cosmos-sdk/third_party/proto/confio/proofs.proto \
     ./ibc-go/proto/ibc/core/client/v1/client.proto \
     ./ibc-go/proto/ibc/core/channel/v1/channel.proto \
@@ -17,4 +18,6 @@ ls -1 $(grep -slR 'message Msg' ./cosmos-sdk/proto | egrep '\.proto$') \
     ./osmosis/proto/osmosis/lockup/lock.proto \
     ./osmosis/proto/osmosis/gamm/v1beta1/pool.proto \
     ./osmosis/proto/osmosis/gamm/pool-models/balancer/balancerPool.proto \
+    ./third_party/google/protobuf/duration.proto \
+    ./third_party/google/protobuf/timestamp.proto \
     | sort | uniq

@@ -12,11 +12,11 @@ export class MsgJoinPool {
     writer.uint32(26);
     writer.string(message.shareOutAmount);
 
-    const tokenInMaxs = message.tokenInMaxs;
-    for (let i = 0; i < tokenInMaxs.length; ++i) {
+    const tokenInMaxs_ = message.tokenInMaxs;
+    for (let i = 0; i < tokenInMaxs_.length; ++i) {
       writer.uint32(34);
       writer.fork();
-      cosmos.base.v1beta1.Coin.encode(tokenInMaxs[i], writer);
+      cosmos.base.v1beta1.Coin.encode(tokenInMaxs_[i], writer);
       writer.ldelim();
     }
   }
@@ -113,11 +113,11 @@ export class MsgExitPool {
     writer.uint32(26);
     writer.string(message.shareInAmount);
 
-    const tokenOutMins = message.tokenOutMins;
-    for (let i = 0; i < tokenOutMins.length; ++i) {
+    const tokenOutMins_ = message.tokenOutMins;
+    for (let i = 0; i < tokenOutMins_.length; ++i) {
       writer.uint32(34);
       writer.fork();
-      cosmos.base.v1beta1.Coin.encode(tokenOutMins[i], writer);
+      cosmos.base.v1beta1.Coin.encode(tokenOutMins_[i], writer);
       writer.ldelim();
     }
   }
@@ -254,19 +254,19 @@ export class MsgSwapExactAmountIn {
     writer.uint32(10);
     writer.string(message.sender);
 
-    const routes = message.routes;
-    for (let i = 0; i < routes.length; ++i) {
+    const routes_ = message.routes;
+    for (let i = 0; i < routes_.length; ++i) {
       writer.uint32(18);
       writer.fork();
-      SwapAmountInRoute.encode(routes[i], writer);
+      SwapAmountInRoute.encode(routes_[i], writer);
       writer.ldelim();
     }
 
-    const tokenIn = message.tokenIn;
-    if (tokenIn !== null) {
+    const tokenIn_ = message.tokenIn;
+    if (tokenIn_ !== null) {
       writer.uint32(26);
       writer.fork();
-      cosmos.base.v1beta1.Coin.encode(tokenIn, writer);
+      cosmos.base.v1beta1.Coin.encode(tokenIn_, writer);
       writer.ldelim();
     }
 
@@ -406,22 +406,22 @@ export class MsgSwapExactAmountOut {
     writer.uint32(10);
     writer.string(message.sender);
 
-    const routes = message.routes;
-    for (let i = 0; i < routes.length; ++i) {
+    const routes_ = message.routes;
+    for (let i = 0; i < routes_.length; ++i) {
       writer.uint32(18);
       writer.fork();
-      SwapAmountOutRoute.encode(routes[i], writer);
+      SwapAmountOutRoute.encode(routes_[i], writer);
       writer.ldelim();
     }
 
     writer.uint32(26);
     writer.string(message.tokenInMaxAmount);
 
-    const tokenOut = message.tokenOut;
-    if (tokenOut !== null) {
+    const tokenOut_ = message.tokenOut;
+    if (tokenOut_ !== null) {
       writer.uint32(34);
       writer.fork();
-      cosmos.base.v1beta1.Coin.encode(tokenOut, writer);
+      cosmos.base.v1beta1.Coin.encode(tokenOut_, writer);
       writer.ldelim();
     }
   }
@@ -515,11 +515,11 @@ export class MsgJoinSwapExternAmountIn {
     writer.uint32(16);
     writer.uint64(message.poolId);
 
-    const tokenIn = message.tokenIn;
-    if (tokenIn !== null) {
+    const tokenIn_ = message.tokenIn;
+    if (tokenIn_ !== null) {
       writer.uint32(26);
       writer.fork();
-      cosmos.base.v1beta1.Coin.encode(tokenIn, writer);
+      cosmos.base.v1beta1.Coin.encode(tokenIn_, writer);
       writer.ldelim();
     }
 
@@ -828,11 +828,11 @@ export class MsgExitSwapExternAmountOut {
     writer.uint32(16);
     writer.uint64(message.poolId);
 
-    const tokenOut = message.tokenOut;
-    if (tokenOut !== null) {
+    const tokenOut_ = message.tokenOut;
+    if (tokenOut_ !== null) {
       writer.uint32(26);
       writer.fork();
-      cosmos.base.v1beta1.Coin.encode(tokenOut, writer);
+      cosmos.base.v1beta1.Coin.encode(tokenOut_, writer);
       writer.ldelim();
     }
 

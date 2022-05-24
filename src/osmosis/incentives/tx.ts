@@ -11,27 +11,27 @@ export class MsgCreateGauge {
     writer.uint32(18);
     writer.string(message.owner);
 
-    const distribute_to = message.distribute_to;
-    if (distribute_to !== null) {
+    const distribute_to_ = message.distribute_to;
+    if (distribute_to_ !== null) {
       writer.uint32(26);
       writer.fork();
-      lockup.QueryCondition.encode(distribute_to, writer);
+      lockup.QueryCondition.encode(distribute_to_, writer);
       writer.ldelim();
     }
 
-    const coins = message.coins;
-    for (let i = 0; i < coins.length; ++i) {
+    const coins_ = message.coins;
+    for (let i = 0; i < coins_.length; ++i) {
       writer.uint32(34);
       writer.fork();
-      cosmos.base.v1beta1.Coin.encode(coins[i], writer);
+      cosmos.base.v1beta1.Coin.encode(coins_[i], writer);
       writer.ldelim();
     }
 
-    const start_time = message.start_time;
-    if (start_time !== null) {
+    const start_time_ = message.start_time;
+    if (start_time_ !== null) {
       writer.uint32(42);
       writer.fork();
-      google.protobuf.Timestamp.encode(start_time, writer);
+      google.protobuf.Timestamp.encode(start_time_, writer);
       writer.ldelim();
     }
 
@@ -142,11 +142,11 @@ export class MsgAddToGauge {
     writer.uint32(16);
     writer.uint64(message.gauge_id);
 
-    const rewards = message.rewards;
-    for (let i = 0; i < rewards.length; ++i) {
+    const rewards_ = message.rewards;
+    for (let i = 0; i < rewards_.length; ++i) {
       writer.uint32(26);
       writer.fork();
-      cosmos.base.v1beta1.Coin.encode(rewards[i], writer);
+      cosmos.base.v1beta1.Coin.encode(rewards_[i], writer);
       writer.ldelim();
     }
   }

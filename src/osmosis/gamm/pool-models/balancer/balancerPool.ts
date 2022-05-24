@@ -5,35 +5,35 @@ import { cosmos } from "../../../../cosmos";
 
 export class SmoothWeightChangeParams {
   static encode(message: SmoothWeightChangeParams, writer: Writer): void {
-    const start_time = message.start_time;
-    if (start_time !== null) {
+    const start_time_ = message.start_time;
+    if (start_time_ !== null) {
       writer.uint32(10);
       writer.fork();
-      google.protobuf.Timestamp.encode(start_time, writer);
+      google.protobuf.Timestamp.encode(start_time_, writer);
       writer.ldelim();
     }
 
-    const duration = message.duration;
-    if (duration !== null) {
+    const duration_ = message.duration;
+    if (duration_ !== null) {
       writer.uint32(18);
       writer.fork();
-      google.protobuf.Duration.encode(duration, writer);
+      google.protobuf.Duration.encode(duration_, writer);
       writer.ldelim();
     }
 
-    const initialPoolWeights = message.initialPoolWeights;
-    for (let i = 0; i < initialPoolWeights.length; ++i) {
+    const initialPoolWeights_ = message.initialPoolWeights;
+    for (let i = 0; i < initialPoolWeights_.length; ++i) {
       writer.uint32(26);
       writer.fork();
-      v1beta1.PoolAsset.encode(initialPoolWeights[i], writer);
+      v1beta1.PoolAsset.encode(initialPoolWeights_[i], writer);
       writer.ldelim();
     }
 
-    const targetPoolWeights = message.targetPoolWeights;
-    for (let i = 0; i < targetPoolWeights.length; ++i) {
+    const targetPoolWeights_ = message.targetPoolWeights;
+    for (let i = 0; i < targetPoolWeights_.length; ++i) {
       writer.uint32(34);
       writer.fork();
-      v1beta1.PoolAsset.encode(targetPoolWeights[i], writer);
+      v1beta1.PoolAsset.encode(targetPoolWeights_[i], writer);
       writer.ldelim();
     }
   }
@@ -100,11 +100,11 @@ export class PoolParams {
     writer.uint32(18);
     writer.string(message.exitFee);
 
-    const smoothWeightChangeParams = message.smoothWeightChangeParams;
-    if (smoothWeightChangeParams !== null) {
+    const smoothWeightChangeParams_ = message.smoothWeightChangeParams;
+    if (smoothWeightChangeParams_ !== null) {
       writer.uint32(26);
       writer.fork();
-      SmoothWeightChangeParams.encode(smoothWeightChangeParams, writer);
+      SmoothWeightChangeParams.encode(smoothWeightChangeParams_, writer);
       writer.ldelim();
     }
   }
@@ -160,30 +160,30 @@ export class Pool {
     writer.uint32(16);
     writer.uint64(message.id);
 
-    const poolParams = message.poolParams;
-    if (poolParams !== null) {
+    const poolParams_ = message.poolParams;
+    if (poolParams_ !== null) {
       writer.uint32(26);
       writer.fork();
-      PoolParams.encode(poolParams, writer);
+      PoolParams.encode(poolParams_, writer);
       writer.ldelim();
     }
 
     writer.uint32(34);
     writer.string(message.future_pool_governor);
 
-    const totalShares = message.totalShares;
-    if (totalShares !== null) {
+    const totalShares_ = message.totalShares;
+    if (totalShares_ !== null) {
       writer.uint32(42);
       writer.fork();
-      cosmos.base.v1beta1.Coin.encode(totalShares, writer);
+      cosmos.base.v1beta1.Coin.encode(totalShares_, writer);
       writer.ldelim();
     }
 
-    const poolAssets = message.poolAssets;
-    for (let i = 0; i < poolAssets.length; ++i) {
+    const poolAssets_ = message.poolAssets;
+    for (let i = 0; i < poolAssets_.length; ++i) {
       writer.uint32(50);
       writer.fork();
-      v1beta1.PoolAsset.encode(poolAssets[i], writer);
+      v1beta1.PoolAsset.encode(poolAssets_[i], writer);
       writer.ldelim();
     }
 

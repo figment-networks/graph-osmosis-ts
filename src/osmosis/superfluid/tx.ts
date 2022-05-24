@@ -234,11 +234,11 @@ export class MsgLockAndSuperfluidDelegate {
     writer.uint32(10);
     writer.string(message.sender);
 
-    const coins = message.coins;
-    for (let i = 0; i < coins.length; ++i) {
+    const coins_ = message.coins;
+    for (let i = 0; i < coins_.length; ++i) {
       writer.uint32(18);
       writer.fork();
-      cosmos.base.v1beta1.Coin.encode(coins[i], writer);
+      cosmos.base.v1beta1.Coin.encode(coins_[i], writer);
       writer.ldelim();
     }
 

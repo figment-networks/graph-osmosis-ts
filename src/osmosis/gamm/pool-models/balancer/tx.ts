@@ -7,19 +7,19 @@ export class MsgCreateBalancerPool {
     writer.uint32(10);
     writer.string(message.sender);
 
-    const poolParams = message.poolParams;
-    if (poolParams !== null) {
+    const poolParams_ = message.poolParams;
+    if (poolParams_ !== null) {
       writer.uint32(18);
       writer.fork();
-      PoolParams.encode(poolParams, writer);
+      PoolParams.encode(poolParams_, writer);
       writer.ldelim();
     }
 
-    const poolAssets = message.poolAssets;
-    for (let i = 0; i < poolAssets.length; ++i) {
+    const poolAssets_ = message.poolAssets;
+    for (let i = 0; i < poolAssets_.length; ++i) {
       writer.uint32(26);
       writer.fork();
-      v1beta1.PoolAsset.encode(poolAssets[i], writer);
+      v1beta1.PoolAsset.encode(poolAssets_[i], writer);
       writer.ldelim();
     }
 

@@ -40,19 +40,19 @@ export function decodeGenericAuthorization(a: Uint8Array): GenericAuthorization 
 
 export class Grant {
   static encode(message: Grant, writer: Writer): void {
-    const authorization = message.authorization;
-    if (authorization !== null) {
+    const authorization_ = message.authorization;
+    if (authorization_ !== null) {
       writer.uint32(10);
       writer.fork();
-      google.protobuf.Any.encode(authorization, writer);
+      google.protobuf.Any.encode(authorization_, writer);
       writer.ldelim();
     }
 
-    const expiration = message.expiration;
-    if (expiration !== null) {
+    const expiration_ = message.expiration;
+    if (expiration_ !== null) {
       writer.uint32(18);
       writer.fork();
-      google.protobuf.Timestamp.encode(expiration, writer);
+      google.protobuf.Timestamp.encode(expiration_, writer);
       writer.ldelim();
     }
   }

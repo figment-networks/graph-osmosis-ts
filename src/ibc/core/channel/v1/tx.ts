@@ -7,11 +7,11 @@ export class MsgChannelOpenInit {
     writer.uint32(10);
     writer.string(message.port_id);
 
-    const channel = message.channel;
-    if (channel !== null) {
+    const channel_ = message.channel;
+    if (channel_ !== null) {
       writer.uint32(18);
       writer.fork();
-      Channel.encode(channel, writer);
+      Channel.encode(channel_, writer);
       writer.ldelim();
     }
 
@@ -97,11 +97,11 @@ export class MsgChannelOpenTry {
     writer.uint32(18);
     writer.string(message.previous_channel_id);
 
-    const channel = message.channel;
-    if (channel !== null) {
+    const channel_ = message.channel;
+    if (channel_ !== null) {
       writer.uint32(26);
       writer.fork();
-      Channel.encode(channel, writer);
+      Channel.encode(channel_, writer);
       writer.ldelim();
     }
 
@@ -111,11 +111,11 @@ export class MsgChannelOpenTry {
     writer.uint32(42);
     writer.bytes(message.proof_init);
 
-    const proof_height = message.proof_height;
-    if (proof_height !== null) {
+    const proof_height_ = message.proof_height;
+    if (proof_height_ !== null) {
       writer.uint32(50);
       writer.fork();
-      client.v1.Height.encode(proof_height, writer);
+      client.v1.Height.encode(proof_height_, writer);
       writer.ldelim();
     }
 
@@ -242,11 +242,11 @@ export class MsgChannelOpenAck {
     writer.uint32(42);
     writer.bytes(message.proof_try);
 
-    const proof_height = message.proof_height;
-    if (proof_height !== null) {
+    const proof_height_ = message.proof_height;
+    if (proof_height_ !== null) {
       writer.uint32(50);
       writer.fork();
-      client.v1.Height.encode(proof_height, writer);
+      client.v1.Height.encode(proof_height_, writer);
       writer.ldelim();
     }
 
@@ -367,11 +367,11 @@ export class MsgChannelOpenConfirm {
     writer.uint32(26);
     writer.bytes(message.proof_ack);
 
-    const proof_height = message.proof_height;
-    if (proof_height !== null) {
+    const proof_height_ = message.proof_height;
+    if (proof_height_ !== null) {
       writer.uint32(34);
       writer.fork();
-      client.v1.Height.encode(proof_height, writer);
+      client.v1.Height.encode(proof_height_, writer);
       writer.ldelim();
     }
 
@@ -560,11 +560,11 @@ export class MsgChannelCloseConfirm {
     writer.uint32(26);
     writer.bytes(message.proof_init);
 
-    const proof_height = message.proof_height;
-    if (proof_height !== null) {
+    const proof_height_ = message.proof_height;
+    if (proof_height_ !== null) {
       writer.uint32(34);
       writer.fork();
-      client.v1.Height.encode(proof_height, writer);
+      client.v1.Height.encode(proof_height_, writer);
       writer.ldelim();
     }
 
@@ -662,22 +662,22 @@ export function decodeMsgChannelCloseConfirmResponse(a: Uint8Array): MsgChannelC
 
 export class MsgRecvPacket {
   static encode(message: MsgRecvPacket, writer: Writer): void {
-    const packet = message.packet;
-    if (packet !== null) {
+    const packet_ = message.packet;
+    if (packet_ !== null) {
       writer.uint32(10);
       writer.fork();
-      Packet.encode(packet, writer);
+      Packet.encode(packet_, writer);
       writer.ldelim();
     }
 
     writer.uint32(18);
     writer.bytes(message.proof_commitment);
 
-    const proof_height = message.proof_height;
-    if (proof_height !== null) {
+    const proof_height_ = message.proof_height;
+    if (proof_height_ !== null) {
       writer.uint32(26);
       writer.fork();
-      client.v1.Height.encode(proof_height, writer);
+      client.v1.Height.encode(proof_height_, writer);
       writer.ldelim();
     }
 
@@ -768,22 +768,22 @@ export function decodeMsgRecvPacketResponse(a: Uint8Array): MsgRecvPacketRespons
 
 export class MsgTimeout {
   static encode(message: MsgTimeout, writer: Writer): void {
-    const packet = message.packet;
-    if (packet !== null) {
+    const packet_ = message.packet;
+    if (packet_ !== null) {
       writer.uint32(10);
       writer.fork();
-      Packet.encode(packet, writer);
+      Packet.encode(packet_, writer);
       writer.ldelim();
     }
 
     writer.uint32(18);
     writer.bytes(message.proof_unreceived);
 
-    const proof_height = message.proof_height;
-    if (proof_height !== null) {
+    const proof_height_ = message.proof_height;
+    if (proof_height_ !== null) {
       writer.uint32(26);
       writer.fork();
-      client.v1.Height.encode(proof_height, writer);
+      client.v1.Height.encode(proof_height_, writer);
       writer.ldelim();
     }
 
@@ -884,11 +884,11 @@ export function decodeMsgTimeoutResponse(a: Uint8Array): MsgTimeoutResponse {
 
 export class MsgTimeoutOnClose {
   static encode(message: MsgTimeoutOnClose, writer: Writer): void {
-    const packet = message.packet;
-    if (packet !== null) {
+    const packet_ = message.packet;
+    if (packet_ !== null) {
       writer.uint32(10);
       writer.fork();
-      Packet.encode(packet, writer);
+      Packet.encode(packet_, writer);
       writer.ldelim();
     }
 
@@ -898,11 +898,11 @@ export class MsgTimeoutOnClose {
     writer.uint32(26);
     writer.bytes(message.proof_close);
 
-    const proof_height = message.proof_height;
-    if (proof_height !== null) {
+    const proof_height_ = message.proof_height;
+    if (proof_height_ !== null) {
       writer.uint32(34);
       writer.fork();
-      client.v1.Height.encode(proof_height, writer);
+      client.v1.Height.encode(proof_height_, writer);
       writer.ldelim();
     }
 
@@ -1010,11 +1010,11 @@ export function decodeMsgTimeoutOnCloseResponse(a: Uint8Array): MsgTimeoutOnClos
 
 export class MsgAcknowledgement {
   static encode(message: MsgAcknowledgement, writer: Writer): void {
-    const packet = message.packet;
-    if (packet !== null) {
+    const packet_ = message.packet;
+    if (packet_ !== null) {
       writer.uint32(10);
       writer.fork();
-      Packet.encode(packet, writer);
+      Packet.encode(packet_, writer);
       writer.ldelim();
     }
 
@@ -1024,11 +1024,11 @@ export class MsgAcknowledgement {
     writer.uint32(26);
     writer.bytes(message.proof_acked);
 
-    const proof_height = message.proof_height;
-    if (proof_height !== null) {
+    const proof_height_ = message.proof_height;
+    if (proof_height_ !== null) {
       writer.uint32(34);
       writer.fork();
-      client.v1.Height.encode(proof_height, writer);
+      client.v1.Height.encode(proof_height_, writer);
       writer.ldelim();
     }
 

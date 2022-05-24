@@ -10,27 +10,27 @@ export class PeriodLock {
     writer.uint32(18);
     writer.string(message.owner);
 
-    const duration = message.duration;
-    if (duration !== null) {
+    const duration_ = message.duration;
+    if (duration_ !== null) {
       writer.uint32(26);
       writer.fork();
-      google.protobuf.Duration.encode(duration, writer);
+      google.protobuf.Duration.encode(duration_, writer);
       writer.ldelim();
     }
 
-    const end_time = message.end_time;
-    if (end_time !== null) {
+    const end_time_ = message.end_time;
+    if (end_time_ !== null) {
       writer.uint32(34);
       writer.fork();
-      google.protobuf.Timestamp.encode(end_time, writer);
+      google.protobuf.Timestamp.encode(end_time_, writer);
       writer.ldelim();
     }
 
-    const coins = message.coins;
-    for (let i = 0; i < coins.length; ++i) {
+    const coins_ = message.coins;
+    for (let i = 0; i < coins_.length; ++i) {
       writer.uint32(42);
       writer.fork();
-      cosmos.base.v1beta1.Coin.encode(coins[i], writer);
+      cosmos.base.v1beta1.Coin.encode(coins_[i], writer);
       writer.ldelim();
     }
   }
@@ -104,19 +104,19 @@ export class QueryCondition {
     writer.uint32(18);
     writer.string(message.denom);
 
-    const duration = message.duration;
-    if (duration !== null) {
+    const duration_ = message.duration;
+    if (duration_ !== null) {
       writer.uint32(26);
       writer.fork();
-      google.protobuf.Duration.encode(duration, writer);
+      google.protobuf.Duration.encode(duration_, writer);
       writer.ldelim();
     }
 
-    const timestamp = message.timestamp;
-    if (timestamp !== null) {
+    const timestamp_ = message.timestamp;
+    if (timestamp_ !== null) {
       writer.uint32(34);
       writer.fork();
-      google.protobuf.Timestamp.encode(timestamp, writer);
+      google.protobuf.Timestamp.encode(timestamp_, writer);
       writer.ldelim();
     }
   }
@@ -183,19 +183,19 @@ export class SyntheticLock {
     writer.uint32(18);
     writer.string(message.synth_denom);
 
-    const end_time = message.end_time;
-    if (end_time !== null) {
+    const end_time_ = message.end_time;
+    if (end_time_ !== null) {
       writer.uint32(26);
       writer.fork();
-      google.protobuf.Timestamp.encode(end_time, writer);
+      google.protobuf.Timestamp.encode(end_time_, writer);
       writer.ldelim();
     }
 
-    const duration = message.duration;
-    if (duration !== null) {
+    const duration_ = message.duration;
+    if (duration_ !== null) {
       writer.uint32(34);
       writer.fork();
-      google.protobuf.Duration.encode(duration, writer);
+      google.protobuf.Duration.encode(duration_, writer);
       writer.ldelim();
     }
   }

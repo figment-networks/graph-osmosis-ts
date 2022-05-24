@@ -8,19 +8,19 @@ export class MsgLockTokens {
     writer.uint32(10);
     writer.string(message.owner);
 
-    const duration = message.duration;
-    if (duration !== null) {
+    const duration_ = message.duration;
+    if (duration_ !== null) {
       writer.uint32(18);
       writer.fork();
-      google.protobuf.Duration.encode(duration, writer);
+      google.protobuf.Duration.encode(duration_, writer);
       writer.ldelim();
     }
 
-    const coins = message.coins;
-    for (let i = 0; i < coins.length; ++i) {
+    const coins_ = message.coins;
+    for (let i = 0; i < coins_.length; ++i) {
       writer.uint32(26);
       writer.fork();
-      cosmos.base.v1beta1.Coin.encode(coins[i], writer);
+      cosmos.base.v1beta1.Coin.encode(coins_[i], writer);
       writer.ldelim();
     }
   }
@@ -145,11 +145,11 @@ export function decodeMsgBeginUnlockingAll(a: Uint8Array): MsgBeginUnlockingAll 
 
 export class MsgBeginUnlockingAllResponse {
   static encode(message: MsgBeginUnlockingAllResponse, writer: Writer): void {
-    const unlocks = message.unlocks;
-    for (let i = 0; i < unlocks.length; ++i) {
+    const unlocks_ = message.unlocks;
+    for (let i = 0; i < unlocks_.length; ++i) {
       writer.uint32(10);
       writer.fork();
-      PeriodLock.encode(unlocks[i], writer);
+      PeriodLock.encode(unlocks_[i], writer);
       writer.ldelim();
     }
   }
@@ -193,11 +193,11 @@ export class MsgBeginUnlocking {
     writer.uint32(16);
     writer.uint64(message.ID);
 
-    const coins = message.coins;
-    for (let i = 0; i < coins.length; ++i) {
+    const coins_ = message.coins;
+    for (let i = 0; i < coins_.length; ++i) {
       writer.uint32(26);
       writer.fork();
-      cosmos.base.v1beta1.Coin.encode(coins[i], writer);
+      cosmos.base.v1beta1.Coin.encode(coins_[i], writer);
       writer.ldelim();
     }
   }
