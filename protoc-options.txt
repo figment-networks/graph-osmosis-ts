@@ -3,4 +3,5 @@
 --proto_path=./cosmos-sdk/third_party/proto
 --proto_path=./ibc-go/proto
 --proto_path=./osmosis/proto
---proto_path=./third_party
+--as_out=./src
+--as_opt=gen-dependencies
