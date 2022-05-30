@@ -1,4 +1,4 @@
-# graph-osmosis-ts
+# osmosis-ts
 
 This modules contains the TypeScript/AssemblyScript binding for osmosis protobuf
 
@@ -15,7 +15,7 @@ git submodule update --init --force
 ### Build and test
 
 ```bash
-yarn install --frozen-lockfile
+yarn install
 yarn build
 yarn test
 ```
