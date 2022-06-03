@@ -18,7 +18,7 @@
     "as-proto": "^0.2.3"
   },
   "devDependencies": {
-    "as-proto-gen": "https://github.com/figment-networks/as-proto.git#v0.3.0-alpha.2",
+    "as-proto-gen": "https://github.com/figment-networks/as-proto.git#v0.3.0-alpha.3",
     "assemblyscript": "^0.19.10",
     "rimraf": "^3.0.2"
   }

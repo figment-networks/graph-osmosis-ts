@@ -7,6 +7,7 @@
 export { cosmos } from "./cosmos";
 export { ibc } from "./ibc";
 export { osmosis } from "./osmosis";
+export { cosmwasm } from "./cosmwasm";
 export { google } from "./google";
 export { tendermint } from "./tendermint";
 export { ics23 } from "./confio";

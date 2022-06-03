@@ -18,3 +18,10 @@
 	branch = v7.3.0
 	shallow = true
 	ignore = all
+
+[submodule "wasmd"]
+	path = wasmd
+	url = https://github.com/CosmWasm/wasmd.git
+	branch = v0.23.0
+	shallow = true
+	ignore = all

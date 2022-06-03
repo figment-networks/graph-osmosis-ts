@@ -2,9 +2,6 @@
 // versions:
 // 	 protoc-gen-as v0.3.0-alpha.2
 // 	 protoc        v3.20.1
-// source: cosmos/base/_export.ts
+// source: cosmos/base/query/_export.ts
 
-export { abci } from "./abci";
-export { reflection } from "./reflection";
 export { v1beta1 } from "./v1beta1";
-export { query } from "./query";
